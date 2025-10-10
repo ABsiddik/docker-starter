@@ -9,8 +9,7 @@
     npm start
 ### then open http://localhost:8080
 ### you should see the test message
-### or (if you are running EC2 machine)
-### <ec2-machine-ip>:8080 in your browser and eadd inbount rule 8080 from security group
+### or (if you are running EC2 machine), ec2-machine-ip:8080 in your browser and eadd inbount rule 8080 from security group
 
 # 5. build Docker image (locally)
 ### tag name: bongodev/hello-docker:latest
