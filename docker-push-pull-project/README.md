@@ -1,12 +1,12 @@
 # 1. Clone this repository
-cd docker-push-pull-project
+    cd docker-push-pull-project
 
 # 2. Install express
-npm install express
+    npm install express
 
 
 # 3. test locally
-npm start
+    npm start
 ### then open http://localhost:8080
 ### you should see the test message
 ### or (if you are running EC2 machine)
@@ -14,17 +14,17 @@ npm start
 
 # 5. build Docker image (locally)
 ### tag name: bongodev/hello-docker:latest
-docker build -t YOUR_DOCKERHUB_ID/hello-docker:latest .
+    docker build -t YOUR_DOCKERHUB_ID/hello-docker:latest .
 
 # 6. Chec your image
-docker images
+    docker images
 
 # 6. login to DockerHub to Push your image | provide your user name and PAT key
-docker login
+d   ocker login
 
 
 # 7. push to Docker Hub
-docker push YOUR_DOCKERHUB_ID/hello-docker:latest
+    docker push YOUR_DOCKERHUB_ID/hello-docker:latest
 
 
 # 8. run the pushed image locally (verify)
@@ -32,20 +32,20 @@ docker push YOUR_DOCKERHUB_ID/hello-docker:latest
 ###  When you run the container: docker run -p 3000:8080 my-node-app, So the mapping means: "Hey Docker, if someone connects to my computer’s port 3000, please forward that traffic to port 8080 inside the container."
 ###  The host is your actual machine - your laptop, desktop, or cloud VM where Docker Engine is installed. A network port on your host OS - e.g., macOS, Windows, or Linux.
 
-docker run --rm -p 3000:8080 YOUR_DOCKERHUB_ID/hello-docker:latest
+    docker run --rm -p 3000:8080 YOUR_DOCKERHUB_ID/hello-docker:latest
 ### open http://localhost:8080 or <ec2-machine-ip>:8080
 
 # Check your running containers:
-docker ps
+    docker ps
 
 # Check running and stopped 
-docker ps -a 
+    docker ps -a 
 
 # stop container
-docker stop container_id
+    docker stop container_id
 
 # Remove stopped containers
-docker container prune -a
+    docker container prune -a
 
 # Remove images
-docker image prune -a
+    docker image prune -a
