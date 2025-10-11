@@ -19,7 +19,7 @@
     docker images
 
 # 6. login to DockerHub to Push your image | provide your user name and PAT key
-d   ocker login
+    docker login
 
 
 # 7. push to Docker Hub

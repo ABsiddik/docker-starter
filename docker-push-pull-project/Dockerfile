@@ -15,6 +15,7 @@ RUN npm ci --production
 COPY . .
 
 
+
 # It tells Docker (and others) that the container is expected to listen on port 8080. It's more like a label that says “Hey, I'm using 8080 inside this container.
 # When you run the container: docker run -p 3000:8080 my-node-app, So the mapping means: "Hey Docker, if someone connects to my computer’s port 3000, please forward that traffic to port 8080 inside the container."
 # The host is your actual machine - your laptop, desktop, or cloud VM where Docker Engine is installed. A network port on your host OS - e.g., macOS, Windows, or Linux.
