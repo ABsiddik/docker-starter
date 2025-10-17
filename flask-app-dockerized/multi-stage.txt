@@ -8,9 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies in a virtual environment
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir --user -r requirements.txt
 
-# Or, pip install --no-cache-dir -r requirements.txt
+# Or, RUN pip install --no-cache-dir --user -r requirements.txt
 # when you add "--no-cache-dir", it tells pip not to store downloaded packages in its local cache
 # Pip installs everything directly, then discards the wheel files.
 # No ~/.cache/pip directory is created. The Docker layer stays clean and smaller. That's a 30–50% reduction in image size - just from one flag.

@@ -1,22 +1,24 @@
-# Use official Python image as base
-FROM python:3.9
+# Stage 1: Build Stage Full
+FROM python:3.9 AS builder
 
-# Set the working directory
 WORKDIR /app
 
-COPY requirements.txt ./
+COPY requirements.txt .
 
-# Install Flask
-RUN pip install -r requirements.txt 
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all files (.) to the container directory (/app or .)
+
 COPY . .
 
+FROM python:3.9-slim
 
-#if face issue just type: RUN pip install -r flask
+WORKDIR /app
 
-# Expose port 5000 for Flask
+COPY --from=builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
+
+COPY --from=builder /app /app
+
 EXPOSE 5000
 
-# Run the app with Python command
+
 CMD ["python", "app.py"]
